@@ -1,4 +1,3 @@
-
 ;;;; Steven Zierk's .emacs file
 ; 14 July 2014
 ;
@@ -8,7 +7,7 @@
 ; three semicolons.
 
 
-;;;; Appearence configurations
+;;;; Appearance configurations
 
 ;;; Include line numbers by default
 (global-linum-mode t)
@@ -18,6 +17,8 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
+;;; Tango-dark color theme
+(load-theme 'tango-dark)
 
 ;;;; Package management
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -25,5 +26,11 @@
 (require 'package)
 (package-initialize)
 
-(require  'treemode)
+;;; Display filesystem with dirtree
+(require 'tree-mode)
+(require 'windata)
 (require 'dirtree)
+
+;;;; Start Emacs shell by default
+(eshell)
+
